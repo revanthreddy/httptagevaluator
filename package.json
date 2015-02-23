@@ -1,0 +1,24 @@
+{
+  "name": "httptagevaluator",
+  "version": "1.0.0",
+  "description": "evaluating html tags in a sourcecode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "express": "3.x",
+    "htmlparser2": "^3.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revanthreddy/httptagevaluator.git"
+  },
+  "author": "rev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revanthreddy/httptagevaluator/issues"
+  },
+  "homepage": "https://github.com/revanthreddy/httptagevaluator"
+}
