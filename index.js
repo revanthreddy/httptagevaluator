@@ -45,6 +45,8 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
     var requestedUrl = req.body.url;
+    console.log(requestedUrl);
+    var responseObject = new Object();
     
     var options = {
                             host: requestedUrl,
@@ -53,12 +55,12 @@ app.post('/', function (req, res) {
     
     var tagMap = {};
     
-    var get =  http.request(options, function( response) {
+    var get = http.request(options , function( response) {
         
-        var responseString = '';
+        var sourceCode = '';
 
         response.on('data', function(data) {
-                responseString += data;
+                sourceCode += data;
         });
         
         response.on('end', function() {               
@@ -75,10 +77,11 @@ app.post('/', function (req, res) {
                     
                 }
             });
-            parser.write(responseString);
+            parser.write(sourceCode);
             parser.end();
-            
-            return res.send(tagMap);
+            responseObject.summary = tagMap;
+            responseObject.source = sourceCode;
+            return res.send(responseObject);
         });
     });
     
