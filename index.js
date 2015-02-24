@@ -31,53 +31,6 @@ function addhttp(url){
     return url;
 };
 
-//app.post('/', function (req, res) {
-//    var requestedUrl = req.body.url;
-//    console.log(requestedUrl);
-//    var responseObject = new Object();
-//    
-//    var options = {
-//                            host: requestedUrl,
-//                            method: 'GET'
-//    };
-//    
-//    var tagMap = {};
-//    
-//    
-//    
-//    var get = http.request(options , function( response) {
-//        
-//        var sourceCode = '';
-//
-//        response.on('data', function(data) {
-//                sourceCode += data;
-//        });
-//        
-//        response.on('end', function() {               
-//            
-//            var parser = new htmlparser.Parser({
-//                onopentag: function(tag, attribs){
-//                    if(tagMap[tag])
-//                        tagMap[tag] = tagMap[tag]+1;
-//                    else
-//                        tagMap[tag] = 1;
-//                },
-//                onclosetag: function(tagname){
-//                    //console.log("Detected closing of "+tagname);
-//                    
-//                }
-//            });
-//            parser.write(sourceCode);
-//            parser.end();
-//            responseObject.summary = tagMap;
-//            responseObject.source = sourceCode;
-//            return res.send(responseObject);
-//        });
-//    });
-//    
-//    get.write("");
-//    get.end();
-//});
 
 
 

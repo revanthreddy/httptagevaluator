@@ -19,9 +19,11 @@ angular.module('htmlevaluatorUiApp')
     };
     
       $scope.evaluateUrl = function(url){
-          $scope.showLoader= true;
           $scope.showSideBar = false;
           $scope.showSourceCode = false;
+          
+          $scope.showLoader= true;
+          
           
         $http.post('/', {"url": url}).
         success(function(data, status, headers, config) {
