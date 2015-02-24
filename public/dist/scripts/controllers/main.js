@@ -9,7 +9,7 @@
  */
 angular.module('htmlevaluatorUiApp')
   .controller('MainCtrl', function ($scope , $http , $routeParams) {
-    
+    $scope.invalid = false;
     $scope.highlight= function(tag){
         console.log(tag);
         var startTag = '<'+tag;
@@ -19,10 +19,14 @@ angular.module('htmlevaluatorUiApp')
     };
     
       $scope.evaluateUrl = function(url){
+          
+          if(!url)
+              $scope.invalid = true;
+          else{
           $scope.showSideBar = false;
           $scope.showSourceCode = false;
           
-          $scope.showLoader= true;
+          //$scope.showLoader= true;
           
           
         $http.post('/', {"url": url}).
@@ -52,6 +56,7 @@ angular.module('htmlevaluatorUiApp')
                 
             }
       });
+          }
     };
     
   });

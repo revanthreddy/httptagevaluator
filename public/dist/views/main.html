@@ -1,12 +1,16 @@
 <div class="container-fluid" ng-controller="MainCtrl">
     <div class="col-lg-6">
         <div class="input-group">
-          <input type="text" ng-model="url" class="form-control" placeholder="Enter your URL here">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button" ng-click="evaluateUrl(url)">Go!</button>
-          </span>
+          <input type="text" ng-model="url" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched"  placeholder="Enter your URL here">
+          
+            <button class="btn btn-default" type="button" ng-click="evaluateUrl(url)" style="margin-bottom: 10px;">Make it so !!</button>
+            <div class="alert alert-danger alert-dismissible" role="alert" ng-show="invalid">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                Invalid search string
+            </div>
         </div><!-- /input-group -->
     </div>
+   
     <div ng-show ="showLoader">
         <wave-spinner></wave-spinner>
     </div>
@@ -37,7 +41,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Holodeck 2015</p>
       </footer>
 
     </div><!--/.fluid-container-->
