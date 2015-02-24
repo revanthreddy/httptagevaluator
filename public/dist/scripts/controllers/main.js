@@ -26,18 +26,16 @@ angular.module('htmlevaluatorUiApp')
           $scope.showSideBar = false;
           $scope.showSourceCode = false;
           
-          //$scope.showLoader= true;
+          $scope.showLoader= true;
           
           
         $http.post('/', {"url": url}).
         success(function(data, status, headers, config) {
-            console.log("error hndler "+status)
+            console.log("success hndler "+status)
             
             if(status === 404){
                 $scope.showLoader= false;
-                $scope.showSourceCode = true;
-                $scope.sourceCode = data.hostname +"not found";
-                
+                alert(url + " not found");
             }else{
             $scope.showLoader= false;
             $scope.tags = data.summary;
@@ -47,14 +45,12 @@ angular.module('htmlevaluatorUiApp')
             }
         }).
         error(function(data, status, headers, config) {
-            console.log("error hndler "+status);
-            if(status === 404){
-                $scope.showLoader= false;
-                console.log(data);
-                $scope.sourceCode = data.hostname +"not found";
-                $scope.showSourceCode = true;
+            console.log("error handler "+status+" "+ data);
+            $scope.showLoader= false;
+            alert(url + " not found");
+            
                 
-            }
+            
       });
           }
     };
