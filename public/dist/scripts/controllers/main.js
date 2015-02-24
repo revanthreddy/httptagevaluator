@@ -31,7 +31,7 @@ angular.module('htmlevaluatorUiApp')
           
         $http.post('/', {"url": url}).
         success(function(data, status, headers, config) {
-            console.log("success hndler "+status)
+            console.log("success hndler "+status);
             
             if(status === 404){
                 $scope.showLoader= false;
