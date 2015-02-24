@@ -1,5 +1,5 @@
 <div class="container-fluid" ng-controller="MainCtrl">
-    <div class="col-lg-6">
+    <div class="col-lg-6" style="margin-left: 40%;">
         <div class="input-group">
           <input type="text" ng-model="url" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched"  placeholder="Enter your URL here">
           
@@ -22,7 +22,7 @@
               <li class="nav-header">Html tag summary</li>
               <div ng-repeat="(key , value) in tags">
                   
-                  <li><a ng-click="highlight(key)">{{key}} {{value}}</a></li>
+                  <li><a ng-click="highlight(key)"><strong>{{key}}</strong> ({{value}})</a></li>
               
               </div>
             </ul>
