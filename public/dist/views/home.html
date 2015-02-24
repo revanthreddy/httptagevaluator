@@ -1,0 +1,12 @@
+<form ng-controller="HomeCtrl">
+    <!--<input class="form-control" placeholder="Enter your URL here" aria-describedby="basic-addon1" type="text">-->
+    <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" ng-model="url" class="form-control" placeholder="Enter your URL here">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="evaluateUrl(url)">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div>
+    
+</form>

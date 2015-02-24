@@ -1,0 +1,43 @@
+<div class="container-fluid" ng-controller="MainCtrl">
+    <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" ng-model="url" class="form-control" placeholder="Enter your URL here">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="evaluateUrl(url)">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+    </div>
+    <div ng-show ="showLoader">
+        <wave-spinner></wave-spinner>
+    </div>
+    
+      <div class="row-fluid" ng-show="showSideBar">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Html tag summary</li>
+              <div ng-repeat="(key , value) in tags">
+                  
+                  <li><a ng-click="highlight(key)">{{key}} {{value}}</a></li>
+              
+              </div>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9" ng-show="showSourceCode">
+          <div class="hero-unit">
+              
+              <div>
+                  <p id="sourceCodeContent">{{sourceCode}}</p>
+              </div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->

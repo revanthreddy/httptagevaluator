@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "cheerio": "^0.18.0",
+    "cors": "~2.5.3",
     "express": "3.x",
-    "htmlparser2": "^3.8.2"
+    "htmlparser2": "^3.8.2",
+    "request": "^2.53.0"
   },
   "repository": {
     "type": "git",
