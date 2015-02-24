@@ -23,7 +23,7 @@ angular.module('htmlevaluatorUiApp')
           $scope.showSideBar = false;
           $scope.showSourceCode = false;
           
-        $http.post('http://localhost:3000/', {"url": url}).
+        $http.post('/', {"url": url}).
         success(function(data, status, headers, config) {
             console.log("error hndler "+status)
             
