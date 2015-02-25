@@ -10,6 +10,9 @@
 angular.module('htmlevaluatorUiApp')
   .controller('MainCtrl', function ($scope , $http , $routeParams) {
     $scope.invalid = false;
+    $scope.showLoader = false;
+    $scope.showContent = false;
+    
     $scope.highlight= function(tag){
         console.log(tag);
         var startTag = '<'+tag;
@@ -23,11 +26,11 @@ angular.module('htmlevaluatorUiApp')
           if(!url)
               $scope.invalid = true;
           else{
-          $scope.showSideBar = false;
-          $scope.showSourceCode = false;
+//          $scope.showSideBar = false;
+//          $scope.showSourceCode = false;
           
           $scope.showLoader= true;
-          
+          $scope.showContent = false;
           
         $http.post('/', {"url": url}).
         success(function(data, status, headers, config) {
@@ -40,8 +43,8 @@ angular.module('htmlevaluatorUiApp')
             $scope.showLoader= false;
             $scope.tags = data.summary;
             $scope.sourceCode = data.source;
-            $scope.showSideBar = true;
-            $scope.showSourceCode = true;
+            $scope.showContent = true;
+//            $scope.showSourceCode = true;
             }
         }).
         error(function(data, status, headers, config) {
